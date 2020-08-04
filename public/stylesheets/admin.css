@@ -1,0 +1,259 @@
+
+/*index.html页面*/
+
+/*头部*/
+.logo{ 
+    float:left;
+    color:#FFF; 
+    margin-top:10px; 
+    /* margin-left: 40px; */
+    line-height:45px;
+}
+.logo img{ 
+    float:left; 
+    margin-right:10px;
+}
+.header{
+    height:70px; 
+    overflow:hidden; 
+    background:url(/images/bg.jpg) no-repeat 0 -1000px; 
+}
+.head-l{ 
+    float:right; 
+    margin-top:17px; 
+    margin-right: 40px;    
+}
+.head-l .button{ 
+    padding:8px 15px;
+    border-radius: 6px;
+}
+.head-l .bg-blue:hover{ 
+    background-color:#03b6fd;
+}
+
+/*菜单列表*/
+.leftnav{
+    width:180px; 
+    height:100%; 
+    position:fixed; 
+    top:70px; 
+    left:0px;
+    border-right: 1px solid #b5cfd9;
+}
+.leftnav-title {
+    height:50px;    
+    background:url(/images/bg.jpg) no-repeat 0 -1000px;  
+    color:#FFF; 
+    padding-left:22px;  
+    font-size:16px; 
+    line-height:50px;
+}
+.leftnav h2{ 
+    padding:10px 0 10px 22px; 
+    transition:all 0.5s ease-in-out; 
+    cursor:pointer; 
+    font-weight:bold; 
+    font-size:14px; 
+    border-top:1px solid #b5cfd9;
+}
+.leftnav .border-bottom{ 
+    border-bottom:1px solid #b5cfd9;
+}
+.leftnav h2:hover{ 
+    color:#09c;
+}
+.leftnav ul {
+    display:none; 
+    border-top:1px solid #b5cfd9; 
+    padding:5px 0; 
+    opacity:1;
+}
+.leftnav ul li a{ 
+    display:block;
+    padding-left:30px;
+    line-height:30px; 
+}
+.leftnav ul li span{ 
+    margin-right:8px;
+}
+
+/*面包屑导航*/
+.bread{ 
+    margin-left:190px; 
+    margin-top:4px;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #999;
+}
+
+/*右边的欢迎页面*/
+.admin{
+    background:#fff;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 110px;
+    left: 180px;
+    padding: 15px;
+    padding-bottom: 0px;
+    /*overflow: auto; */
+    border-top: 1px solid #b5cfd9;
+    padding-right: 15px;
+}
+
+/*-----------------------------------------------------------------*/
+/*admin.ejs页面*/
+.panel-head{
+    background:#fff;
+    font-size: 14px;
+}
+.padding{
+    overflow: hidden;
+}
+.search li{
+    float: left;
+    margin-right: 15px;
+    line-height: 35px;
+}
+.input{
+    width:250px; 
+    /* line-height:17px; */
+    display:inline-block;
+}
+.table th{
+    text-align: center;
+}
+tr th:first-child{
+    padding-left:20px;
+}
+
+.body-content{
+    padding: 20px 0;
+    overflow: hidden;
+}
+.form-group {
+    padding-bottom: 25px;
+}
+/*pintuer.css里的进行修改*/
+.form-x .form-group .label {
+    float: left;
+    width: 12%;
+    text-align: right;
+    padding: 7px 7px 7px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #333;
+    font-size: 15px;
+    line-height: 24px;
+}
+.field_input{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: solid 1px #ddd;
+    line-height: 20px;
+    display: block;
+    border-radius: 4px;
+}
+
+/*-----------------------------------------------------------------*/
+/*enterprise.ejs页面*/
+.enter_search,.stud_search{
+    padding-left: 0;
+}
+.enter_search li:nth-of-type(2){
+    font-size: 16px;
+    margin-right: 4px;
+    margin-left: 15px;
+}
+.enter_button{
+    padding: 7px 14px;
+}
+.pagelist {
+    padding: 10px 0;
+}
+.pagelist a,.pagelist span{
+    border-radius: 3px;
+    border: 1px solid #dfdfdf;
+    display: inline-block;
+    padding: 5px 12px;    
+    border-radius:4px;
+}
+.pagelist a:hover {
+    background:#09F;
+    color:#FFF;
+    border-color: #09F;
+}
+.active{
+    background: #09F;
+    color:#FFF;
+    border-color: #09F;
+    margin: 0 2px;
+    display: inline-block;
+}
+
+/*-----------------------------------------------------------------*/
+/*enterp_info.ejs页面*/
+table .tr th{
+    width:100px;
+    text-align: center;
+}
+table .tr th:nth-of-type(1){
+    width:60px;
+}
+table .tr th:nth-of-type(3){
+    width:400px;
+}
+
+table .td td{
+    width:100px;    
+    vertical-align:middle;
+}
+table .td td:nth-of-type(1){
+    width:60px;
+}
+table .td td:nth-of-type(3){
+    width:400px;
+}
+
+/*-----------------------------------------------------------------*/
+/*recruit_info+.ejs页面*/
+table .re_tr th{
+    width:100px;
+    text-align: center;
+}
+table .re_tr th:nth-of-type(1){
+    width:60px;
+}
+table .re_tr th:nth-of-type(5){
+    width:400px;
+}
+
+table .re_td td{
+    width:100px;    
+    vertical-align:middle;
+}
+table .re_td td:nth-of-type(1){
+    width:60px;
+}
+table .re_td td:nth-of-type(5){
+    width:400px;
+}
+
+/*system.ejs页面*/
+.sys{
+    padding-bottom: 20px;
+}
+.sys label{
+    font-size: 14px;
+}
+form .sys:nth-of-type(4){
+    padding-bottom: 10px;
+}
+
+/*individual.ejs页面*/
+.list_2{
+    margin-top: 60px;
+}

@@ -1,0 +1,70 @@
+.main{
+	position: relative;
+	height: 100vh;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background: url('/images/login_bg.jpg');	
+	background-position: center center;
+}
+.loginbox{
+	position: absolute;
+	width: 400px;
+	height: 500px;
+	padding: 35px;
+	color: #EEE;
+	left: 50%;
+	top:50%;
+	margin-left: -200px;
+	margin-top: -250px;
+}
+.loginbox h3{
+	text-align: center;
+	height: 20px;
+	font-size: 20px;
+	color: #FFFFFF;
+	line-height: 20px;
+	padding:0 0 50px 0; 
+}
+.input{
+	height: 46px;
+	padding: 0 5px;
+	margin-bottom: 25px;
+	border-radius: 8px;
+	border:2px solid #808080  ;
+	/* border: rgba(255,255,255,0.2) 2px solid !important; */
+	background: none;
+	position: relative;
+	outline: none;	
+	font-size: 15px;
+	color: #FFFFFF;
+	/* color: floralwhite; */
+}
+input::-webkit-input-placeholder{
+	color:#D3D3D3 ;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+	color:#D3D3D3 ;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+	color:#D3D3D3 ;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+	color:#D3D3D3 ;
+}
+select{
+	color:#D3D3D3 ;
+	border-radius: 4px;
+	opacity: 0.7;
+}
+select option{
+	color:#D3D3D3;
+	opacity: 0.5;
+	background-color:#333333;
+}
+.button{
+	width: 100%;
+	font-size: 16px;
+	border-radius: 6px;
+	height: 46px;
+}

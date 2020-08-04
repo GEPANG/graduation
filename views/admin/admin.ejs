@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <!-- <script src="/public/admin/js/pintuer.js"></script> -->
+    <title>管理员管理</title>
+</head>
+
+<body>
+  <div class="panel">
+    <div class="panel-head">
+        <strong class="icon-reorder">&nbsp;管理员列表</strong> 
+    </div>
+
+    <div class="padding border-bottom">
+      <ul class="search" style="padding-left:10px;">
+          <li> 
+              <a class="button border-sub icon-plus-square-o" href="/admin/admin/add"> 添加管理员</a> 
+          </li>
+          <li>搜索：</li>        
+          <li>
+            <form method="get" action="">
+                <input type="text" placeholder="请输入搜索关键字" value="<%= search%>" name="search" class="input" />
+                <button class="button border-sub icon-search" >搜索</button>
+            </form>
+          </li>
+      </ul>
+    </div>
+    	
+    <table class="table table-hover text-center">
+      <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>添加时间</th>
+        <th >操作</th>
+      </tr>    
+      <% data.forEach(item=>{%> 
+        <tr>
+            <td><%= item.id%></td>
+            <td><font color="#00CC99"><%= item.username%></font></td>
+            <td><%= item.time%></td>
+            <td>
+                <a class="button border-blue" href="/admin/admin/edit?id=<%= item.id%>">
+                <span class="icon-edit"></span>&nbsp;修改</a>
+                <a class="button border-red" href="javascript:void(0)" onclick="del(this,<%= item.id%>)">
+                <span class="icon-trash-o"></span> 删除</a> 
+                <!-- <div class="button-group"></div> -->
+            </td>
+          </tr>
+      <%})%> 
+    </table>
+  </div>
+
+  <script>
+      //无刷新删除功能
+      function del(obj,id){
+          if(confirm('您确定删除吗？')){
+            $.get('/admin/admin/del',{id:id},function(data){
+                if(data==1){
+                  $(obj).parents("tr").remove();
+                }else{
+                   alert("删除失败！");
+                }
+            })
+          }
+      }
+  
+  </script>
+</body>
+</html>

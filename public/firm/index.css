@@ -1,0 +1,20 @@
+
+.head{
+    height: 70px;
+    line-height: 70px;
+    background: #ffffff;
+}
+.container h1 img{
+    display: block;
+    float: left;
+    margin: 14px 10px 0 0;
+}
+.nav li a{
+    margin-left: 18px;
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
+    height: 70px;
+    line-height: 60px;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/student/index.css">
+    <script src="/javascripts/jquery.js"></script>
+    <title>学生登录后==>企业信息首页</title>
+</head>
+<body>
+     <div class="header fadein-left s_enter">
+        <div class="container head-l">
+            <h1 class="float-left fadein-top">欢迎登录</h1>
+            <div class="button_box">
+                <a class="button float-right border-blue bg-blue-light flash-hover" href="/student">
+                    <span class="icon-angle-double-left"></span> 返回首页
+                </a> 
+            </div>
+        </div>
+    </div>
+
+    <div class="container list_2">
+        <div class="panel">
+            <div class="padding padding-bottom">
+                <ul class="search">
+                    <li>搜索：</li>
+                    <li>
+                        <form method="get" action="">
+                            <input type="text" placeholder="请输入搜索关键字" value="" name="search" class="input" />
+                            <button class="button border-sub icon-search" >搜索</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <table class="table text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>公司名称</th>
+                    <th>公司简介</th>
+                    <th>公司类型</th>
+                    <th>创建时间</th>
+                    <th>注册资金</th>
+                    <th>公司地址</th>
+                    <th>公司邮箱</th>
+                    <th>操作</th>
+                </tr>             
+            <%data.forEach(item=>{%>
+                <tr class="s_enterList">
+                    <td><%= item.id%></td>
+                    <td><%= item.cname%></td>
+                    <td><%= item.brief%></td>
+                    <td><%= item.type%></td>
+                    <td><%= item.time%></td>
+                    <td><%= item.fund%></td>
+                    <td><%= item.address%></td>
+                    <td><%= item.email%></td>
+                    <td>
+                        <a class="button border-green" href="/student/enterpriseInfo/check?id=<%= item.id%>">
+                        <span class="icon-eye"></span>&nbsp;查看</a> 
+                    </td>
+                </tr>     
+            <%})%>
+                <tr>
+                    <td colspan="12">
+                        <div class="pagelist">
+                            <a href="?p=<%= Number(p)-1>1?Number(p)-1:1%>">
+                                上一页
+                            </a>
+                            <a href="?p=1" class="active">首页</a>
+                            <% for(var i=2;i<=totPages;i++){%>
+                                <a href="javascript:;" onclick="clicks(this)"><%= i%></a>    
+                            <%}%>
+                             <a href="?p=<%= Number(p)+1<totPages?Number(p)+1:totPages%>">下一页</a>                       
+                            <a href="?p=<%= totPages%>">尾页</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function clicks(obj){
+            $(obj).attr('href','?p='+$(obj).text());
+        }
+    </script>
+</body>
+</html>

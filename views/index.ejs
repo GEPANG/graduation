@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <title>后台管理页面</title>
+</head>
+
+<body  style="background-color:#f2f9fd;">
+<!---------------------top------------------------------------------------>
+    <div class="header bg-main" style="padding-left: 20px">
+        <div class="logo margin-big-left fadein-left">
+            <h1>
+                <img src="/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />
+                毕业生管理系统后台管理中心
+            </h1>
+        </div>
+        <div class="head-l">
+            <a class="button button-big bg-blue" href="/logout">
+                <span class="icon-power-off"></span> 退出登录
+            </a> 
+        </div>
+    </div>
+
+<!---------------------left------------------------------------------------->
+    <div class="leftnav">
+        <div class="leftnav-title">
+            <strong><span class="icon-list"></span>&nbsp;&nbsp;管理列表</strong>
+        </div>
+        
+        <!------------------------用户----------------------------->
+        <h2><span class="icon-user"></span>&nbsp;&nbsp;用户管理</h2>
+        <ul>
+            <li>
+                <a href="/admin/admin" target="right">
+                <span class="icon-caret-right"></span>管理员管理</a>
+            </li>
+            <li>
+                <a href="/admin/enterprise" target="right">
+                <span class="icon-caret-right"></span>企业管理员管理</a>
+            </li>        
+        </ul>   
+
+        <!------------------------信息----------------------------->
+        <h2><span class="icon-paper-plane-o"></span>&nbsp;&nbsp;信息管理</h2>
+        <ul>
+            <li>
+                <a href="/admin/stud_info" target="right">
+                <span class="icon-caret-right"></span>学生信息管理</a>
+            </li>
+            <li>
+                <a href="/admin/enterp_info" target="right">
+                <span class="icon-caret-right"></span>企业信息管理</a>
+            </li>   
+            <li>
+                <a href="/admin/recruit_info" target="right">
+                <span class="icon-caret-right"></span>招聘信息管理</a>
+            </li>        
+        </ul>  
+
+        <!------------------------基本设置----------------------------->
+        <h2 style="border-bottom: 1px solid #b5cfd9;"><span class="icon-gear"></span>&nbsp;系统管理</h2>
+        <ul  style="width: 100%;border: none;">
+            <li>
+                <a href="/admin/system" target="right">
+                <span class="icon-caret-right"></span>系统设置</a>
+            </li>         
+        </ul>   
+    </div>
+<!---------------------right------------------------------------------------->
+    <ul class="bread">
+        <li>
+         <!--<a href="{:U('Index/info')}" target="right" class="icon-home">&nbsp;&nbsp;首页</a> -->
+            <a target="right" class="icon-home">&nbsp;&nbsp;首页</a>
+        </li>
+        <li>
+            <a href="##" id="a_leader_txt">网站信息</a>
+        </li>
+        <li>
+            <b>当前语言：</b><span style="color:red;">中文</php></span>
+        </li>
+    </ul>
+
+    <div class="admin">
+        <iframe scrolling="auto" frameborder="0" src="/error" name="right" width="100%" height="100%"></iframe>
+    </div>    
+        
+<script>
+    $(function(){
+        $(".leftnav h2").click(function(){
+            $(this).next().slideToggle(200);	
+        })
+        $(".leftnav ul li a").click(function(){
+            $("#a_leader_txt").text($(this).text());
+        })
+    });
+</script>
+</body>
+</html>

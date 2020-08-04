@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/pintuer.js"></script>
+    <title>企业管理员添加</title>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="panel-head">
+            <strong><span class="icon-key"></span>&nbsp;添加企业管理员</strong>
+        </div>
+        <div class="body-content">
+             <form method='post' class="form-x" enctype="multipart/form-data" action="/admin/system/save">
+                 <!--网站标题-->
+                <div class="form-group sys">
+                    <div class="label">
+                        <label for="sitename">网站标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" value="<%= data.title%>" class="field_input" id="mpass" name="title" size="50" placeholder="请输入网站标题" data-validate="required:请输入网站标题" />
+                    </div>
+                </div>                
+                <!--网站关键字-->
+                <div class="form-group sys">
+                    <div class="label">
+                        <label for="sitename">网站关键字：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input " value="<%= data.keywords%>" name="keywords" size="50" placeholder="请输入网站关键字" data-validate="required:请输入网站关键字" />         
+                    </div>
+                </div>
+                <!--网站描述-->
+                <div class="form-group sys">
+                    <div class="label"> 
+                        <label for="sitename">网站描述</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" value="<%= data.description%>" name="description" size="50" placeholder="请输入网站描述" data-validate="required:请输入网站描述" />         
+                    </div>
+                </div>              
+                <!--网站LOGO-->
+                <div class="form-group sys">
+                    <div class="label">
+                        <label for="sitename">网站LOGO：</label>
+                    </div>
+                    <div class="field">
+                        <input type="file" name="logo" class="field_input" class="input" id="">
+                        <img width="100px" src="<%= data.logo%>"  alt="">                   
+                        <input type="hidden" name="logo" value="<%= data.logo%>">  
+                    </div>
+                </div>
+                 <!--网站版权信息-->
+                <div class="form-group sys">
+                    <div class="label">
+                        <label for="sitename">网站版权信息：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" value="<%= data.copyright%>" class="field_input" name="copyright" id=""  placeholder="请输入网站版权信息" data-validate="required:请输入网站版权信息">
+                    </div>
+                </div>
+                 <!--网站备案信息-->
+                 <div class="form-group sys">
+                    <div class="label">
+                        <label for="sitename">网站备案信息：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" value="<%= data.record%>" class="field_input" name="record" id=""  placeholder="请输入网站备案信息" data-validate="required:请输入网站备案信息">
+                    </div>
+                </div>
+                <!--提交-->
+                  <div class="form-group sys">
+                      <div class="label"><label for=""></label></div>
+                      <div class="field">
+                            <button class="button bg-sub button-big button-block icon-check-square-o">提交</button>
+                      </div>
+                  </div>
+             </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+</body>
+</html>

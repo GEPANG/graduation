@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/student/index.css">
+    <script src="/javascripts/jquery.js"></script>
+    <!-- <script src="/javascripts/pintuer.js"></script> -->
+    <title>管理员登录===>查看企业详情页</title>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="body-content">
+             <form method='post' class="form-x" action="">
+                <!--公司名称-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">公司名称：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.cname%>" name="cname"
+                        placeholder="请输入公司名称" data-validate="required:请输入公司名称">
+                    </div>
+                 </div>
+                <!--简介-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">简介：</label>
+                    </div>
+                    <div class="field">
+                        <textarea  class="field_input" name="brief" readonly id="" cols="30" rows="4"><%= data.brief%></textarea>
+                        <!-- <textarea type="text" class="field_input" placeholder="请输入简介" data-validate="required:请输入简介"> -->
+                    </div>
+                </div>
+                <!--类型-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">类型：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.type%>" name="type" size="50" 
+                        placeholder="请输入类型">
+                    </div>
+                </div>
+                <!--注册时间-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">注册时间：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.time%>" name="time"
+                        placeholder="请输入注册时间" data-validate="required:请输入注册时间">
+                    </div>
+                </div>
+                <!--注册资金-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">注册资金：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.fund%>" name="fund"
+                        placeholder="请输入注册资金" data-validate="required:请输入注册资金">
+                    </div>
+                </div> 
+                <!--地址-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">地址：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.address%>" name="address" 
+                        placeholder="请输入地址" >
+                    </div>
+                </div>
+                 <!--邮箱-->
+                 <div class="form-group">
+                    <div class="label"> 
+                        <label for="">邮箱：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" name="email" readonly value="<%= data.email%>" size="50" 
+                        placeholder="请输入邮箱" >
+                    </div>
+                </div>
+             </form>
+        </div>
+    </div>
+</body>
+</html>

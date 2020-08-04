@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <!-- <script src="/javascripts/pintuer.js"></script> -->
+    <title>学生信息添加</title>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="panel-head">
+            <strong><span class="icon-key"></span>&nbsp;添加学生信息</strong>
+        </div>
+        <div class="body-content">
+             <form method='post' class="form-x" action="">
+                <!--姓名-->
+                <div class="form-group">
+                       <div class="label"> 
+                           <label for="">姓名：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="username" size="50" 
+                            placeholder="请输入姓名" data-validate="required:请输入姓名">
+                        </div>
+                </div>
+                <!--学号-->
+                <div class="form-group">
+                        <div class="label"> 
+                            <label for="">学号：</label>
+                         </div>
+                         <div class="field">
+                             <input type="text" class="field_input" name="sid" size="50" 
+                             placeholder="请输入学号" data-validate="required:请输入学号">
+                         </div>
+                </div>
+                <!--性别-->
+                <div class="form-group">
+                        <div class="label"> 
+                            <label for="">性别：</label>
+                         </div>
+                         <div class="field">
+                             <input type="text" class="field_input" name="gender" size="50" 
+                             placeholder="请输入性别" data-validate="required:请输入性别">
+                         </div>
+                </div>
+                <!--年龄-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">年龄：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="age" size="50" 
+                            placeholder="请输入年龄">
+                        </div>
+                </div>
+                <!--年级-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">年级：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="grade" size="50" 
+                            placeholder="请输入年级" data-validate="required:请输入年级">
+                        </div>
+                </div>
+                <!--专业-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">专业班级：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="special" size="50" 
+                            placeholder="请输入专业" data-validate="required:请输入专业">
+                        </div>
+                </div> 
+                <!--证书-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">证书：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" name="certificate" size="50" 
+                        placeholder="请输入证书" >
+                    </div>
+                </div>
+                <!--提交-->
+                <div class="form-group">
+                    <div class="label"><label for=""></label></div>
+                    <div class="field">
+                        <button class="button bg-sub button-big button-block icon-check-square-o">提交</button>
+                    </div>
+                </div>
+             </form>
+        </div>
+    </div>
+</body>
+</html>

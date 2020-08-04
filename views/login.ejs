@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="main">
+        <div class="panel-body loginbox">
+            <h3>欢迎你</h3>
+            <form action="/check" method="post">
+                <div class="form-group">
+                    <input type="text" name="username" class="input input_one" placeholder="请输入账户">
+                </div>
+                <div class="form-group">
+                    <select class="input" name="sel">
+                        <option value="1">管理员</option>
+                        <option value='2'>学生</option>
+                        <option value='3'>企业人员</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="input input_three" placeholder="请输入密码">
+                </div>
+                <div>
+                    <button class="button bg-sub">登录</button>
+                </div>
+            </form>
+        </div>
+   </div>
+</body>
+</html>

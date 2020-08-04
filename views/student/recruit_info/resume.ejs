@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/student/index.css">
+    <script src="/javascripts/jquery.js"></script>
+    <!-- <script src="/javascripts/pintuer.js"></script> -->
+    <title>学生登录===>简历投递详情页</title>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="body-content">
+             <form method='post' class="form-x" action="" enctype="multipart/form-data">
+                 <!--公司-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">公司：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.company%>" name="company">
+                    </div>
+                 </div>
+                <!--姓名-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">姓名：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input"  value="" name="username"
+                        placeholder="请输入你的名字" data-validate="required:请输入你的名字">
+                    </div>
+                 </div>
+                <!--年龄-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">年龄：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input"  value="" name="age"
+                        placeholder="请输入你的年龄" data-validate="required:请输入你的年龄">
+                    </div>
+                </div>
+                <!--应聘职位-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">应聘职位：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" readonly value="<%= data.position%>" name="position" size="50">
+                    </div>
+                </div>
+                <!--学历-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">学历：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input"  value="" name="edu"
+                        placeholder="请输入学历" data-validate="required:请输入学历">
+                    </div>
+                </div>
+                <!--爱好和特长-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">爱好和特长：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input"  value="" name="hobby"
+                        placeholder="请输入爱好和特长" data-validate="required:请输入爱好和特长">
+                    </div>
+                </div>                 
+                 <!--持有证书-->
+                 <div class="form-group">
+                    <div class="label"> 
+                        <label for="">持有证书：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" name="certificate"  value="" size="50" 
+                        placeholder="请输入持有证书" >
+                    </div>
+                </div>
+                <!--简历上传-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">上传简历：</label>
+                    </div>
+                    <div class="field">
+                        <input type="file" class="field_input" title="请上传图片上传" name="img">
+                        <img src="/upload/1578802057529.5715.jpeg" width="200px" alt="">                        
+                    </div>
+                </div>
+                <!--提交-->
+                <div class="form-group">
+                    <div class="label"><label for=""></label></div>
+                    <div class="field">
+                        <button type="submit" class="button bg-sub button-big button-block icon-check-square-o">提交</button>
+                    </div>
+                </div>
+             </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <title>招聘信息管理</title>
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-head">
+            <strong class="icon-reorder">&nbsp;招聘信息列表</strong>
+        </div>
+
+        <div class="padding border-bottom">
+            <ul class="search enter_search">
+                <li>搜索：</li> 
+                <li>
+                    <form method="GET" action="">
+                        <input type="text" class="input" value="<%= search%>" name="search" placeholder="请输入搜索关键字">
+                        <button class="button border-sub icon-search">搜索</button>
+                    </form>
+                </li>
+            </ul>            
+        </div>
+
+        <table class="table table-hover text-center">
+            <tr class="re_tr">
+                <th>ID</th>
+                <th>公司名称</th>
+                <th>类型</th>
+                <th>职位</th>
+                <th>职位要求</th>
+                <th>发布时间</th>                
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr> 
+            <%data.forEach(item=>{%>
+                <tr class="re_td">
+                    <td><%= item.id%></td>
+                    <td><%= item.company%></td>
+                    <td><%= item.type%></td>
+                    <td><%= item.position%></td>
+                    <td><%= item.brief%></td>
+                    <td><%= item.time%></td>
+                    <td><%= item.email%></td>
+                    <td>
+                        <a class="button border-red icon-trash-o" onclick="del(this,<%= item.id%>)">&nbsp;删除</a>
+                    </td>
+                </tr> 
+            <%})%>   
+            <tr>
+                <td colspan="12">
+                    <div class="pagelist"> 
+                        <a href="?p=<%= Number(p)-1>=1?Number(p)-1:1%>">上一页</a>
+                        <a href="?p=1" class="active">首页</a>
+                        <% for(var i=2;i<= totPages;i++){%>                            
+                            <a href="javascript:;" onclick="clicks(this)"><%= i%></a>
+                        <%}%>
+                        <a href="?p=<%= Number(p)+1 <= totPages ? Number(p)+1:totPages%>"">下一页</a>
+                        <a href="?p=<%= totPages%>">尾页</a> 
+                    </div>
+                </td>
+            </tr>          
+        </table>
+    </div>
+
+    <script>
+        function del(obj,id){
+            if(confirm("确定删除吗？")){
+                $.get('/admin/recruit_info/del',{id:id},data=>{
+                    if(data==1){
+                        $(obj).parents('tr').remove();
+                        location.href='/admin/recruit_info';
+                    }else{
+                        alert('删除失败');
+                    }
+                })
+            }
+        }
+    
+        function clicks(obj){
+            $(obj).attr('href','?p='+$(obj).text());
+        }
+    </script>
+</body>
+</html>

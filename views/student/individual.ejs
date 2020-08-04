@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <title>信息阅览</title>
+</head>
+<body>
+     <div class="header fadein-left indi" >
+        <div class="container head-l" style="margin-right: 0;padding-right: 40px;">
+            <h1 class="float-left fadein-top swing-hover swing">欢迎登录</h1>
+            <div class="button_box">
+                <a class="button float-right border-blue bg-blue-light flash-hover" href="/student">
+                    <span class="icon-angle-double-left"></span> 返回首页
+                </a> 
+            </div>
+        </div>
+    </div>
+
+    <div class="container list_2">
+        <div class="panel">
+            <div class="padding padding-bottom">
+                <ul class="search">
+                     <li> 
+                        <a class="button border-sub icon-plus-square-o" href="/student/individual/add"> 个人信息添加</a> 
+                    </li>
+                    <li>搜索：</li>
+                    <li>
+                        <form method="get" action="">
+                            <input type="text" placeholder="请输入搜索关键字" value="<%= search%>" name="search" class="input" />
+                            <button class="button border-sub icon-search" >搜索</button>
+                            <input type="hidden" name="username" value="<%= username%>"/>
+                        </form>
+                    </li>
+                     <li> 
+                       <div style="color:gray;">修改个人信息请搜索自己</div>
+                    </li>
+                </ul>
+            </div>
+            <table class="table text-center table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>学号</th>
+                    <th>性别</th>
+                    <th>年龄</th>
+                    <th>年级</th>
+                    <th>专业班级</th>
+                    <th>证书</th>
+                    <th>操作</th>
+                </tr>             
+            <%data.forEach(item=>{%>
+                <tr>
+                    <td><%= item.id%></td>
+                    <td><%= item.username%></td>
+                    <td><%= item.sid%></td>
+                    <td><%= item.gender%></td>
+                    <td><%= item.age%></td>
+                    <td><%= item.grade%></td>
+                    <td><%= item.special%></td>
+                    <td><%= item.certificate%></td>
+                    <td>
+                        <% if(username==item.username){%>
+                            <a class="button border-blue" href="/student/individual/edit?id=<%= item.id%>">
+                            <span class="icon-edit"></span>&nbsp;修改</a> 
+                        <%}else{%>
+                            <a class="button border-green" href="/student/individual/edit?id=<%= item.id%>">
+                            <span class="icon-eye"></span>&nbsp;查看</a> 
+                        <%}%>                       
+                    </td>
+                </tr>
+            <%})%>
+            <tr>
+                <td colspan="12">
+                    <div class="pagelist">
+                        <a href="?p=<%= Number(p)-1>1?Number(p)-1:1%>">
+                            上一页
+                        </a>
+                        <a href="?p=1" class="active">首页</a>
+                        <% for(var i=2;i<=totPages;i++){%>
+                            <a href="javascript:;" onclick="cliks(this)"><%= i%></a>    
+                        <%}%>
+                         <a href="?p=<%= Number(p)+1<totPages?Number(p)+1:totPages%>">下一页</a>                       
+                        <a href="?p=<%= totPages%>">尾页</a>
+                    </div>
+                </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function cliks(obj){
+            $(obj).attr('href','?p='+$(obj).text());
+        }
+    </script>
+</body>
+</html>

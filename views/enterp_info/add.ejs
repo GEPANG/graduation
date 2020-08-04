@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <!-- <script src="/javascripts/pintuer.js"></script> -->
+    <title>企业信息添加</title>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="panel-head">
+            <strong><span class="icon-key"></span>&nbsp;添加企业信息</strong>
+        </div>
+        <div class="body-content">
+             <form method='post' class="form-x" action="">
+                <!--公司名称-->
+                <div class="form-group">
+                       <div class="label"> 
+                           <label for="">公司名称：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="cname"
+                            placeholder="请输入公司名称" data-validate="required:请输入公司名称">
+                        </div>
+                </div>
+                <!--简介-->
+                <div class="form-group">
+                        <div class="label"> 
+                            <label for="">简介：</label>
+                         </div>
+                         <div class="field">
+                             <textarea  class="field_input" name="brief" id="" cols="30" rows="4"></textarea>
+                             <!-- <textarea type="text" class="field_input" placeholder="请输入简介" data-validate="required:请输入简介"> -->
+                         </div>
+                </div>
+                <!--类型-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">类型：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="type" size="50" 
+                            placeholder="请输入类型">
+                        </div>
+                </div>
+                <!--注册时间-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">注册时间：</label>
+                        </div>
+                        <div class="field">
+                            <input type="date" class="field_input" name="time"
+                            placeholder="请输入注册时间" data-validate="required:请输入注册时间">
+                        </div>
+                </div>
+                <!--注册资金-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">注册资金：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="fund"
+                            placeholder="请输入注册资金" data-validate="required:请输入注册资金">
+                        </div>
+                </div> 
+                <!--地址-->
+                <div class="form-group">
+                    <div class="label"> 
+                        <label for="">地址：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="field_input" name="address" 
+                        placeholder="请输入地址" >
+                    </div>
+                </div>
+                 <!--邮箱-->
+                 <div class="form-group">
+                        <div class="label"> 
+                            <label for="">邮箱：</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="field_input" name="email" size="50" 
+                            placeholder="请输入邮箱" >
+                        </div>
+                </div>
+                <!--提交-->
+                <div class="form-group">
+                    <div class="label"><label for=""></label></div>
+                    <div class="field">
+                        <button class="button bg-sub button-big button-block icon-check-square-o">提交</button>
+                    </div>
+                </div>
+             </form>
+        </div>
+    </div>
+</body>
+</html>

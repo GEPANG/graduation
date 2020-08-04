@@ -1,0 +1,273 @@
+body{
+    position: relative;
+    /* background: url('/images/login_head.jpg') no-repeat;
+    background-size:cover;  */
+}
+.header{
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    color: #ffffff;
+    /* background:url('/images/login_head.webp'); */
+    /* opacity: 0.6; */
+    background-size: cover;
+    opacity: 0.7;
+}
+.header .button_box{
+    float: right;
+    padding-top: 18px;
+}
+.button_box .button{
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+.list{
+    /* position: fixed; */
+    /* top: 70px; */
+    /* background:url('/images/login_1.jpg'); */
+    /* background-size: cover; */
+    opacity: 0.6;
+    width: 180px;
+    height: 100%;
+    color: #ffffff;
+}
+.list h3{
+    padding:20px 0 10px 20px; 
+    cursor: pointer;
+}
+.list ul {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+.list ul li{
+    float: none;
+    display:block;
+    cursor: pointer;  
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    display: block;
+    padding-left: 20px;
+}
+.list ul li a{
+    color: #ffffff;
+}
+table{
+    border-top: 2px solid #ddd;
+}
+
+/*individual页面*/
+.indi{
+    background: url('/images/login_head.jpg'); 
+    opacity: 1;
+}
+.list_2{
+    padding-top: 40px;
+}
+.table th {
+    text-align: center;
+}
+.search{
+    padding:5px 0 16px 0;
+}
+.search li:first-child{
+    font-size: 16px;
+    height: 40px;
+    line-height: 38px;  
+}
+.search li form input{
+    font-size: 16px;
+    height: 38px;
+    line-height: 38px;  
+    width: 250px;
+    display: inline-block;
+}
+.search li form button{
+    padding: 7px 12px;
+}
+.pagelist{
+    padding: 10px 0;
+}
+.pagelist a{
+    border: 1px solid #dfdfdf;
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+.pagelist a:hover {
+    background: #09F;
+    color:#FFF;
+    border-color:#09F;
+}
+.active{
+    background: #09F;    
+}
+
+
+/*学生登录页的===>edit*/
+.body-content{
+    padding: 28px 0;
+    overflow: hidden;
+}
+.form-group {
+    padding-bottom: 25px;
+}
+/*pintuer.css里的进行修改*/
+.form-x .form-group .label {
+    float: left;
+    width: 10%;
+    text-align: right;
+    padding: 7px 7px 7px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #333;
+    font-size: 15px;
+    line-height: 24px;
+}
+.field_input{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: solid 1px #ddd;
+    line-height: 20px;
+    display: block;
+    border-radius: 4px;
+}
+
+
+/*学生登录页的企业信息页==enterprise_info*/
+.s_enter{
+    background: url('/images/bg.jpg'); 
+    opacity: 1;
+}
+.s_enterList td:nth-of-type(3){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+    height: 36px;
+    line-height: 50px;
+    padding: 0;
+    display: block;
+    border:none;
+    padding-left: 25px;
+}
+.s_enterList td:nth-of-type(7){
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+    padding-left: 20px;
+}
+.table .s_enterList{
+    border-bottom: 2px solid #ddd;
+}
+.table .s_enterList:hover{
+    background: #f5f5f5;
+}
+.table .s_enterList td{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    border: none;
+}
+
+/*学生登录页的招聘信息页==recruit_info*/
+.re_info tr{
+    border-bottom: 2px solid #ddd;
+}
+.re_info tr:hover{
+    background: #f5f5f5;
+}
+.re_info th{   
+    width: 100px;
+}
+.re_info td{   
+    vertical-align: middle;
+    border: none;
+}
+.re_info td:nth-of-type(5){
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    height: 36px;
+    line-height: 50px;
+    padding: 0;
+}
+.re_info td:nth-of-type(6){
+    width: 150px;
+}
+.re_info td:nth-of-type(8){
+    width: 160px;
+}
+
+
+/*管理员登录页的企业信息页==enterprise_info.ejs*/
+.enter_man_info li:nth-child(2){   
+    font-size: 16px;
+    height: 40px;
+    line-height: 38px;  
+    padding-left: 30px;
+}
+tr th{
+    width: 100px;
+}
+.list_3 td:nth-of-type(3),.list_3 td:nth-of-type(7){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+    /* height: 36px;
+    line-height: 50px; */
+    height: 58px;   
+    line-height: 58px;
+    padding: 0;
+    display: block;
+    border:none;
+    padding-left: 25px;
+}
+.list_3 td:last-child{
+    width: 160px;
+}
+.enter_man_info_table tr{
+    border: 2px solid #ddd;
+}
+.enter_man_info_table tr:hover{
+    background: #f5f5f5
+}
+.enter_man_info_table tr td{
+    border: none;
+}
+.enter_man_info_table td{
+    padding: 12px 0;
+    vertical-align: none;
+}
+
+
+/*管理员登录==>招聘信息页*/
+.enter_man_recruit td:nth-of-type(5){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+    height: 36px;
+    line-height: 56px;
+    padding: 0;
+    display: block;
+    border:none;
+    padding-left: 25px;
+}
+.enter_man_recruit td:last-child{
+    width: 160px;
+}

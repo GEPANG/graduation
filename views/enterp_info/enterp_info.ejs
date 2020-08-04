@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/pintuer.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script src="/javascripts/jquery.js"></script>
+    <title>企业信息管理</title>
+    <style>
+   
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="panel-head">
+            <strong class="icon-reorder">&nbsp;企业信息列表</strong>
+        </div>
+
+        <div class="padding border-bottom">
+            <ul class="search enter_search">
+                <li>
+                    <a href="/admin/enterp_info/add" class="button border-sub enter_button">
+                        <span class="icon-plus-square-o"></span>&nbsp;添加企业信息
+                    </a>
+                </li>
+                <li>搜索：</li> 
+                <li>
+                    <form method="GET" action="">
+                        <input type="text" class="input" value="<%= search%>" name="search" placeholder="请输入搜索关键字">
+                        <button class="button border-sub icon-search">搜索</button>
+                    </form>
+                </li>
+            </ul>            
+        </div>
+
+        <table class="table table-hover text-center">
+            <tr class="tr">
+                <th>ID</th>
+                <th>公司名称</th>
+                <th>简介</th>
+                <th>类型</th>
+                <th>创建时间</th>
+                <th>注册资金</th>
+                <th>地址</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>   
+            <% data.forEach(item=>{%> 
+                <tr class="td">
+                    <td><%= item.id%></td>
+                    <td><%= item.cname%></td>
+                    <td><%= item.brief%></td>
+                    <td><%= item.type%></td>
+                    <td><%= item.time%></td>
+                    <td><%= item.fund%></td>
+                    <td><%= item.address%></td>
+                    <td><%= item.email%></td>
+                    <td style="width: 110px;">
+                        <a class="button border-red icon-trash-o" onclick="del(this,<%= item.id%>)">&nbsp;删除</a>
+                    </td>
+                </tr>      
+            <%})%>    
+            <tr>
+                <td colspan="12">
+                    <div class="pagelist"> 
+                        <a href="?p=<%= Number(p)-1 >=1 ?  Number(p)-1 : 1%>">上一页</a>
+                        <a href="?p=1" class="active">首页</a>
+                        <% for(var i=2;i<= totPages;i++){%>                            
+                            <a href="javascript:;" onclick="clicks(this)"><%= i%></a>
+                        <%}%>
+                        <a href="?p=<%= Number(p)+1 <= totPages ? Number(p)+1 : totPages%>">下一页</a>
+                        <a href="?p=<%= totPages%>">尾页</a> 
+                    </div>
+                </td>
+            </tr>           
+        </table>
+    </div>
+
+    <script>
+        //删除
+        function del(obj,id){
+            if(confirm("您确定删除？")){
+                $.get('/admin/enterp_info/del',{id:id},(data)=>{
+                    if(data==1){
+                        $(obj).parents('tr').remove();
+                        location.href='/admin/enterp_info';
+                    }else{
+                        alert("删除失败！");
+                    }
+                })
+            }
+        }
+        
+        $('.pagelist a').click(function(){
+            // console.log($(this).attr('href').substr(3))
+            if(Number($(this).attr('href').substr(3)) == 3){
+                console.log($(this).removeClass('a.active'))
+            }
+        })
+        //分页
+        function clicks(obj){
+            $(obj).attr('href','?p='+$(obj).text());
+            // console.log($(obj).attr('href'))
+            // http://localhost:5000/admin/enterp_info?p=2
+            // alert($(obj))
+            // $(obj).prev().addClass('active')
+        }
+    </script>
+</body>
+</html>
